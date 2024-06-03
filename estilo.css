@@ -9,6 +9,8 @@ body {
     line-height: 1.6;
     background-color: #ff0000;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -16,6 +18,10 @@ header {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
@@ -26,8 +32,6 @@ header h1 {
 header p {
     font-size: 1.2em;
 }
-
-
 
 .container {
     width: 80%;
@@ -42,7 +46,6 @@ header p {
 .main-content {
     margin: 20px 0;
 }
-
 
 .post {
     background: #fff;
@@ -66,6 +69,10 @@ header p {
 .post img {
     align-items: center;
     border-radius: 8px;
+}
+
+.risk-images img {
+    width: 49%;
 }
 
 ul {
@@ -104,7 +111,6 @@ footer p {
     color: #2980b9;
 }
 
-
 nav ul {
     list-style: none;
     display: flex;
@@ -124,4 +130,46 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+/* Responsive menu styles */
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: flex;
+        margin-left: 4%;
+        margin-top: -9%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 60px; /* Considerando o cabeçalho fixo */
 }
